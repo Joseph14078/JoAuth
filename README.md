@@ -1,2 +1,2 @@
 # JoAuth
-Authentication system used in some of my projects.
+Authentication system used in some of my projects. (MongoDB based)

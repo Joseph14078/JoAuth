@@ -1,0 +1,41 @@
+{
+    "$id": "/User",
+    "type": "object",
+	"properties": {
+		"username": {
+            "description": "Allows lowercase only to prevent collisions.",
+            "type": "string",
+            "pattern": "^[a-z0-9_]{1,15}$"
+        },
+
+		"email": {
+            "description": "Matches any lowercase email. Custom pattern used to exclude uppercase characters and to avoid multiple schema errors when using pattern and format in combination with one another.",
+            "type": "string",
+            "pattern": "^[a-z0-9_.+-]+@[a-z0-9-]+\\.[a-z0-9-.]+$"
+        },
+
+        "creation": {
+            "type": "integer",
+            "minimum": 0
+        },
+        
+        "passwordHash": {
+            "description": "Password is not validated using this! See password.json. This only validates the stored hash.",
+            "type": "string",
+            "pattern": "^.{6,}$"
+        },
+
+        "verified": {
+            "type": "boolean",
+            "default": false
+        }
+    },
+
+    "additionalProperties": false,
+    "required": [
+        "username",
+        "creation",
+        "passwordHash",
+        "verified"
+    ]
+}

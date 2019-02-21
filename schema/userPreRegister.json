@@ -1,0 +1,12 @@
+{
+    "$id": "/UserPreRegister",
+    "type": "object",
+	"properties": {
+        "username": { "$ref": "/User#/properties/username" },
+        "email":    { "$ref": "/User#/properties/email" },
+        "creation": { "$ref": "/User#/properties/creation" },
+        "verified": { "$ref": "/User#/properties/verified" }
+    },
+    "additionalProperties": false,
+    "required": [ "username", "creation", "verified" ]
+}

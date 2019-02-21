@@ -1,0 +1,41 @@
+{
+    "$id": "/Query",
+    "type": "object",
+    "properties": {
+        "filter": {
+            "type": "object"
+        },
+        "projection": {
+            "type": "object",
+            "additionalProperties": {
+                "type": "integer",
+                "enum": [0, 1]
+            }
+        },
+        "sort": {
+            "type": "array",
+            "items": {
+                "type": "array",
+                "items": [{
+                    "type": "string"
+                }, {
+                    "type": "integer",
+                    "enum": [1, -1]
+                }] 
+            }
+        },
+        "pageSize": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "page": {
+            "type": "integer",
+            "minimum": 1
+        }
+    },
+    "dependencies": {
+        "pageSize": ["page"],
+        "page": ["pageSize"]
+    },
+    "additionalProperties": true
+}

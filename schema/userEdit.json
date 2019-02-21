@@ -1,0 +1,11 @@
+{
+    "$id": "/UserEdit",
+    "type": "object",
+    "properties": {
+        "username": { "$ref": "/User#/properties/username" },
+        "email": { "$ref": "/User#/properties/email" },
+        "passwordHash": { "$ref": "/User#/properties/passwordHash" },
+        "verified": { "$ref": "/User#/properties/verified" }
+    },
+    "additionalProperties": false
+}

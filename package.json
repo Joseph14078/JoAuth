@@ -1,0 +1,29 @@
+{
+  "name": "joauth",
+  "version": "1.0.0",
+  "description": "Authentication system used in some of my projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joseph14078/JoAuth.git"
+  },
+  "keywords": [
+    "authentication"
+  ],
+  "author": "Joseph Judge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Joseph14078/JoAuth/issues"
+  },
+  "homepage": "https://github.com/Joseph14078/JoAuth#readme",
+  "dependencies": {
+    "ajv": "^6.9.1",
+    "bcryptjs": "^2.4.3",
+    "deepcopy": "^2.0.0",
+    "json-schema-defaults": "^0.4.0",
+    "mongodb": "^3.1.13"
+  }
+}
