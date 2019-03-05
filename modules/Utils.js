@@ -64,6 +64,7 @@ class Chain {
         this.next();
     }
 }
+exports.Chain = Chain;
 
 exports.testOid = function(oid, failure, success) {
     if (typeof oid == 'undefined') return false;
@@ -83,5 +84,3 @@ exports.testOid = function(oid, failure, success) {
         });
     }
 };
-
-exports.Chain = Chain;

@@ -2,6 +2,8 @@ const fs = require('fs');
 const defaults = require('json-schema-defaults');
 const deepcopy = require('deepcopy');
 const Ajv = require('ajv');
+const Path = require('path');
+
 
 let _initDone = false;
 
@@ -41,10 +43,12 @@ exports.addSchema = function(schema) {
 exports.init = function() {
     if (_initDone) return;
 
-    console.log(require('path').basename(__dirname));
-
-    fs.readdirSync('./schema/').forEach((path) => {
-        let schema = require("../schema/" + path);
+    fs.readdirSync(
+        Path.join(__dirname, "../schema")
+    ).forEach(schemaFilename => {
+        let schema = require(
+            Path.join(__dirname, "../schema", schemaFilename)
+        );
         exports.addSchema(schema);
     });
 

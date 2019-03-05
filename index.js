@@ -348,13 +348,9 @@ module.exports = class {
                             user: user
                         });
 
-                        if (fields || allFields) {
-                            if (success) success(user);
-                            return;
-                        }
-
-                        let id = ObjectId(user["_id"]).toString();
-                        if (success) success(id);
+                        success({
+                            user: user
+                        });
                         return;
                     }
 
@@ -547,9 +543,9 @@ module.exports = class {
                     }
                 })
             });
-        }, id => {
+        }, user => {
             this._collection.deleteOne(
-                { "_id": id },
+                { "_id": user["_id"] },
                 error => chain.next(error)
             )
         }, error => {
